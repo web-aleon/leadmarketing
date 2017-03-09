@@ -1,0 +1,214 @@
+// VAR 
+@darkText: #222527;
+@mainColor: #ffc526;
+// MIXINS
+.gradient (@startColor: #3b3b3b, @endColor: #2c2c2c) {
+	background-color: @startColor;
+	background: -moz-linear-gradient(top, @startColor 0%, @endColor 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(0%, @endColor));
+	background: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+	background: -o-linear-gradient(top, @startColor 0%, @endColor 100%);
+	background: -ms-linear-gradient(top, @startColor 0%, @endColor 100%);
+	background: linear-gradient(to bottom, @startColor 0%, @endColor 100%);
+}
+.flex{
+	display: -webkit-box;
+	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: flex;
+}
+
+// FONTS 
+@font-face {
+  font-family: 'AeroMaticsRegular';
+  src: url('../fonts/AeroMaticsRegular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AeroMaticsRegular.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/AeroMaticsRegular.woff2') format('woff2'),
+       url('../fonts/AeroMaticsRegular.woff') format('woff'),
+       url('../fonts/AeroMaticsRegular.ttf')  format('truetype'), 
+       url('../fonts/AeroMaticsRegular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'aero_maticsregular';
+    src: url('../fonts/aeromaticsregular.eot');
+    src: url('../fonts/aeromaticsregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aeromaticsregular.woff2') format('woff2'),
+         url('../fonts/aeromaticsregular.woff') format('woff'),
+         url('../fonts/AeroMaticsRegular.ttf')  format('truetype'), 
+         url('../fonts/aeromaticsregular.svg#aero_maticsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+// COMMON
+@media (max-width: 1199px){
+	
+}
+@media (max-width: 991px){
+	
+}
+@media (max-width: 767px){
+	
+}
+
+body{
+	font-family: 'Roboto', Arial, sans-serif;
+
+}
+h1{
+	font-family: 'aero_maticsregular', Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 100px;
+	line-height: 69px;
+	margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: 400;
+}
+h2{
+	font-size: 40px;
+	line-height: 36px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	margin-top: 70px;
+}
+div, header, section, article{
+	.flex;
+	justify-content: center;
+}
+.container{
+	width: 1170px;
+	padding: 0 15px;
+	flex-direction: column;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	font-weight: 300;
+}
+.h1-divider{
+	width: 82px;
+	height: 2px;
+	background-color: #fff;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.h2-divider{
+	width: 86px;
+	height: 4px;
+	background-color: @darkText;
+}
+.item-divider{
+	width: 67px;
+	height: 1px;
+	background-color: @darkText;
+}
+.maincolor{
+	color: @mainColor;
+}
+// HEADER
+header{
+	height: 142px;
+	background-color: #27292b;
+	background-image:url('../img/lineBg.png');
+	background-repeat: repeat-x;
+
+	.container{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+	}
+	.logo-box{
+		flex-grow: 1;
+	}
+	.site-desc{
+		flex-grow: 2;
+		justify-content: flex-start;
+		p{	
+
+			padding: 8px 17px;
+			background: url('../img/lineBg.png');
+			color: #fff;
+			opacity: 0.63;	
+			font-weight: 300;
+		}
+	}
+	.callback{
+		align-items: flex-end;
+		.flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+	.phone{
+		color: #fff;
+		font-size: 25px;
+		line-height: 19px;
+		margin-bottom: 15px;
+		font-weight: 300;
+	}
+	.wbh_btn{
+		width: 206px;
+		height: 44px;
+		border: 2px solid @mainColor;
+		color: @mainColor;
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: 300;
+
+		
+		img{
+			width: 30px;
+			height: 30px;
+			margin: 7px 9px 7px 14px;
+		}
+
+
+	}
+}
+
+// HOME 
+#home{
+	background: url('../img/sec1-bg.jpg');
+	background-size: contain;
+	color: #fff;
+	height: 759px;
+	flex-direction: column;
+	align-items: center;
+	
+	.desc{
+		font-size: 40px;
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+// NUMBERS
+#numbers{
+	background: url('../img/lineBg.png') repeat-x;
+	.container{
+		align-items: center;
+	}
+	.numbers-items{
+		align-items: flex-start;
+		margin-top: 83px;
+	}
+	.numbers-item{
+		flex-direction: column;
+		width: 270px;
+		align-items: center;
+
+		p{
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 30px;
+		}
+	}
+
+}
